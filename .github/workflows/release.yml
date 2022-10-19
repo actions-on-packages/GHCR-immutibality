@@ -9,14 +9,6 @@ jobs:
     steps:
       - name: Checking out!
         uses: actions/checkout@v3
-        with:
-           ref: ${{ github.event.payload.release.tag_name}}
-     
-      - name: Print github context payload
-        run: echo '${{ toJSON(github) }}'
-        
-      - name: Print release event payload
-        run: echo '${{ toJSON(github.event.payload.release) }}'
        
 #       - name: Use Node.js
 #         uses: actions/setup-node@v3
@@ -35,6 +27,6 @@ jobs:
         
       - name: Publish action 
         uses: actions-on-packages/package-action@0.4.1
-#         with: 
+#        with: 
 #            path: 'dist/'
         
